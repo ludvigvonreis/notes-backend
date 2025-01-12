@@ -22,7 +22,7 @@ export const auth = betterAuth({
 		},
 	},
 	basePath: "/api/auth",
-	trustedOrigins: ["http://localhost:3000"],
+	trustedOrigins: ["https://localhost:3000"],
 	session: {
 		cookieCache: {
 			enabled: true,
