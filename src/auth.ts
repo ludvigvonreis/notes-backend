@@ -22,7 +22,7 @@ export const auth = betterAuth({
 		},
 	},
 	basePath: "/api/auth",
-	trustedOrigins: ["https://notes-backend-6jnx.onrender.com"],
+	trustedOrigins: ["http://localhost:3000"],
 	session: {
 		cookieCache: {
 			enabled: true,
