@@ -29,4 +29,11 @@ export const auth = betterAuth({
 			maxAge: 5 * 60, // Cache duration in seconds
 		},
 	},
+	advanced: {
+        crossSubDomainCookies: {
+            enabled: true,
+            domain: "https://localhost:3000"
+        },
+		useSecureCookies: true
+    }
 });
