@@ -26,7 +26,16 @@ app.use(logger());
 app.use(
 	"*",
 	cors({
-		origin: ["http://localhost:3000", "https://localhost:3000"],
+		origin: (origin) => {
+			const allowedOrigins = [
+			  "http://localhost:3000", // Local dev
+			  "https://localhost:3000", // Deployed frontend
+			];
+			if (!origin || allowedOrigins.includes(origin)) {
+			  return origin; // Allow specific origins
+			}
+			return ""; // Block other origins (prevents wildcard issues)
+		  },
 		allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 		allowHeaders: ["Content-Type", "Authorization"],
 		credentials: true,
