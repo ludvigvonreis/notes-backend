@@ -26,7 +26,7 @@ export const auth = betterAuth({
 	advanced: {
 		crossSubDomainCookies: {
 			enabled: true,
-			domain: "https://localhost:3000"
+			domain: "localhost"
 		},
 		cookies: {
 			session_token: {
