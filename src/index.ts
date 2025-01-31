@@ -28,8 +28,8 @@ app.use(
 	cors({
 		origin: (origin) => {
 			const allowedOrigins = [
-			  "http://localhost:3000", // Local dev
-			  "https://localhost:3000", // Deployed frontend
+			  //"http://localhost:3000", // Local dev
+			  "https://notes-frontend-jyzf.onrender.com", // Deployed frontend
 			];
 			if (!origin || allowedOrigins.includes(origin)) {
 			  return origin; // Allow specific origins
