@@ -22,5 +22,5 @@ export const auth = betterAuth({
 		},
 	},
 	basePath: "/api/auth",
-	trustedOrigins: ["http://localhost:3000"],
+	trustedOrigins: ["http://localhost:3000", "https://localhost:3000"],
 });
