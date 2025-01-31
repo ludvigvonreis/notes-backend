@@ -23,15 +23,15 @@ export const sql = postgres({
 
 // ---- Middleware ----
 app.use(logger());
-app.use(
-	"*",
-	cors({
-		origin: "http://localhost:3000",
-		allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-		allowHeaders: ["Content-Type", "Authorization"],
-		credentials: true,
-	})
-);
+// app.use(
+// 	"*",
+// 	cors({
+// 		origin: "http://localhost:3000",
+// 		allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+// 		allowHeaders: ["Content-Type", "Authorization"],
+// 		credentials: true,
+// 	})
+// );
 app.on(["POST", "GET"], "/auth/**", (c) => auth.handler(c.req.raw));
 app.use("*", async (c, next) => {
 	const session = await auth.api.getSession({ headers: c.req.raw.headers });
